@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>dev.peterherczku</groupId>
+    <artifactId>FazekasBOT</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+
+    <name>Fazekas BOT</name>
+
+    <description>Copyright (c) Herczku Péter | A Budapesti Fazekas Mihály Általános Iskola és Gimnázium Discord bot-ja.
+        Engedély nélkül nem használható. Kontakt: peterherczku915@gmail.com
+
+        Copyright (c) Herczku Péter | This is the discord bot of the Fazekas Mihály Secondary school.
+        Do not use without permission. Contact: peterherczku915@gmail.com
+    </description>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+
+    <build>
+        <defaultGoal>clean package</defaultGoal>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>net.dv8tion</groupId>
+            <artifactId>JDA</artifactId>
+            <version>4.2.0_168</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.21</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-math3</artifactId>
+            <version>3.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sedmelluq</groupId>
+            <artifactId>lavaplayer</artifactId>
+            <version>LATEST</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.12</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <repositories>
+        <repository>
+            <id>jcenter</id>
+            <name>jcenter-bintray</name>
+            <url>https://jcenter.bintray.com</url>
+        </repository>
+        <repository>
+            <id>central</id>
+            <name>bintray</name>
+            <url>https://jcenter.bintray.com</url>
+        </repository>
+    </repositories>
+
+</project>
